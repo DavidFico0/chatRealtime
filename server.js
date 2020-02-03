@@ -9,3 +9,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view', path.join(__dirname, 'public'));
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
+
+app.use('/', (req, res) => {
+    res.render('index.html')
+});
+
+server.listen(3000);
